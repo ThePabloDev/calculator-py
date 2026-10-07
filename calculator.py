@@ -38,7 +38,7 @@ class Calculadora(tk.Tk):
                           command=lambda x=botao: self.clicar(x)).grid(
                               row=i, column=j, sticky='nsew', padx=3, pady=3)
         self.bind('<Key>', self.tecla)
-
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     def atualizar(self):
         self.display.set(self.expressao or '0')
 
