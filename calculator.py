@@ -38,7 +38,7 @@ class Calculadora(tk.Tk):
                           command=lambda x=botao: self.clicar(x)).grid(
                               row=i, column=j, sticky='nsew', padx=3, pady=3)
         self.bind('<Key>', self.tecla)
-
+isso é um teste, beleza
     def atualizar(self):
         self.display.set(self.expressao or '0')
 
@@ -47,26 +47,10 @@ class Calculadora(tk.Tk):
             self.expressao = ''
         elif botao == '⌫':
             self.expressao = self.expressao[:-1]
-        elif botao == '±':
-            if self.expressao.startswith('-'):
-                self.expressao = self.expressao[1:]
-            elif self.expressao:
-                self.expressao = '-' + self.expressao
-        elif botao == '=':
-            try:
-                import ast, operator
-                ops = {ast.Add: operator.add, ast.Sub: operator.sub,
-                       ast.Mult: operator.mul, ast.Div: operator.truediv,
-                       ast.Mod: operator.mod, ast.USub: operator.neg,
+
                        ast.UAdd: operator.pos}
                 def resolver(node):
-                    if isinstance(node, ast.Expression): return resolver(node.body)
-                    if isinstance(node, ast.Constant) and type(node.value) in (int, float): return node.value
-                    if isinstance(node, ast.BinOp) and type(node.op) in ops: return ops[type(node.op)](resolver(node.left), resolver(node.right))
-                    if isinstance(node, ast.UnaryOp) and type(node.op) in ops: return ops[type(node.op)](resolver(node.operand))
-                    raise ValueError('Expressão inválida')
-                valor = resolver(ast.parse(self.expressao.replace('×', '*').replace('÷', '/').replace('−', '-'), mode='eval'))
-                self.expressao = str(int(valor)) if isinstance(valor, float) and valor.is_integer() else str(round(valor, 10))
+             ance(valor, float) and valor.is_integer() else str(round(valor, 10))
             except (ValueError, SyntaxError, ZeroDivisionError, OverflowError):
                 self.display.set('Erro')
                 self.expressao = ''
