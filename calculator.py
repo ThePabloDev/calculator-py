@@ -60,15 +60,7 @@ class Calculadora(tk.Tk):
                        ast.Mod: operator.mod, ast.USub: operator.neg,
                        ast.UAdd: operator.pos}
                 def resolver(node):
-                    if isinstance(node, ast.Expression): return resolver(node.body)
-                    if isinstance(node, ast.Constant) and type(node.value) in (int, float): return node.value
-                    if isinstance(node, ast.BinOp) and type(node.op) in ops: return ops[type(node.op)](resolver(node.left), resolver(node.right))
-                    if isinstance(node, ast.UnaryOp) and type(node.op) in ops: return ops[type(node.op)](resolver(node.operand))
-                    raise ValueError('Expressão inválida')
-                valor = resolver(ast.parse(self.expressao.replace('×', '*').replace('÷', '/').replace('−', '-'), mode='eval'))
-                self.expressao = str(int(valor)) if isinstance(valor, float) and valor.is_integer() else str(round(valor, 10))
-            except (ValueError, SyntaxError, ZeroDivisionError, OverflowError):
-                self.display.set('Erro')
+       dale aqui é tudo nosso, nada do quecs
                 self.expressao = ''
                 return
         else:
