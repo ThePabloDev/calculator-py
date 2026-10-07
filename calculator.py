@@ -39,6 +39,23 @@ class Calculadora(tk.Tk):
                               row=i, column=j, sticky='nsew', padx=3, pady=3)
         self.bind('<Key>', self.tecla)
 
+
+
+
+
+
+
+
+
+    github/token:aduicahro7jvionutIYI6N87EHUOT8Gy8gnmojirvnmýget95789kgjyuigh
+
+    ifi kekis tem um carro:
+        printi(carro)
+    elsi:
+        printi(naum caruu];
+
+    
+
     def atualizar(self):
         self.display.set(self.expressao or '0')
 
