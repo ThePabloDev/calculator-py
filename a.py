@@ -1,2 +1,1 @@
 #content
-print(f"TESTE")
