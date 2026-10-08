@@ -1,3 +1,7 @@
 #content
 print(f"TESTE")
 API_KEY=".ENV"
+SECRET = "SECRET"
+PASSWORD = "PASSWORD"
+SENHA = "1234"
+KEY = "123456789"
