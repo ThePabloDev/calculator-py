@@ -1,3 +1,3 @@
 #content
 print(f"TESTE")
-API_KEY="KKK"
+API_KEY=".ENV"
